@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Samsara Young&#39;s Blog</title>
+  
+  <subtitle>黑夜给了我黑色的眼睛, 我却用它来寻找光明，还有别人路上掉落的硬币!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://samsarayoung.github.io/"/>
+  <updated>2018-05-26T13:18:49.896Z</updated>
+  <id>https://samsarayoung.github.io/</id>
+  
+  <author>
+    <name>Samsara Young</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android 开发常用小技巧</title>
+    <link href="https://samsarayoung.github.io/2018/05/25/Android-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>https://samsarayoung.github.io/2018/05/25/Android-开发常用小技巧/</id>
+    <published>2018-05-25T09:36:37.000Z</published>
+    <updated>2018-05-26T13:18:49.896Z</updated>
+    
+    <content type="html"><![CDATA[<p>总所周知，Android Studio是安卓开发最好的工具，也是现在大把多数Android开发者最主要的开发工具，因此，使用好Android Studio快捷键和插件等开发小技巧还是很有必要的。</p><h2 id="Android-Studio-快捷键"><a href="#Android-Studio-快捷键" class="headerlink" title="Android Studio 快捷键"></a>Android Studio 快捷键</h2><h3 id="格式化代码"><a href="#格式化代码" class="headerlink" title="格式化代码"></a>格式化代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Alt+L</span><br></pre></td></tr></table></figure><h3 id="合并成一行"><a href="#合并成一行" class="headerlink" title="合并成一行"></a>合并成一行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + Shift + J</span><br></pre></td></tr></table></figure><h3 id="全局搜索"><a href="#全局搜索" class="headerlink" title="全局搜索"></a>全局搜索</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">双击Shift</span><br></pre></td></tr></table></figure><h3 id="布局查询"><a href="#布局查询" class="headerlink" title="布局查询"></a>布局查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shift + F</span><br></pre></td></tr></table></figure><h3 id="按关键字全局搜索"><a href="#按关键字全局搜索" class="headerlink" title="按关键字全局搜索"></a>按关键字全局搜索</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Shift+F</span><br></pre></td></tr></table></figure><h3 id="查看调用的地方"><a href="#查看调用的地方" class="headerlink" title="查看调用的地方"></a>查看调用的地方</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alt+F7</span><br></pre></td></tr></table></figure><h3 id="代码自动修正"><a href="#代码自动修正" class="headerlink" title="代码自动修正"></a>代码自动修正</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alt+Enter</span><br></pre></td></tr></table></figure><h3 id="全局修改"><a href="#全局修改" class="headerlink" title="全局修改"></a>全局修改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shift+F6</span><br></pre></td></tr></table></figure><h3 id="快速转换进行大小写"><a href="#快速转换进行大小写" class="headerlink" title="快速转换进行大小写"></a>快速转换进行大小写</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Shift+U</span><br></pre></td></tr></table></figure><h3 id="移动代码"><a href="#移动代码" class="headerlink" title="移动代码"></a>移动代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Shift+上下键</span><br></pre></td></tr></table></figure><h3 id="向下复制"><a href="#向下复制" class="headerlink" title="向下复制"></a>向下复制</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+D</span><br></pre></td></tr></table></figure><h3 id="去除无用包名"><a href="#去除无用包名" class="headerlink" title="去除无用包名"></a>去除无用包名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Alt+O</span><br></pre></td></tr></table></figure><h3 id="代码补全"><a href="#代码补全" class="headerlink" title="代码补全"></a>代码补全</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+J</span><br></pre></td></tr></table></figure><h3 id="多行编辑"><a href="#多行编辑" class="headerlink" title="多行编辑"></a>多行编辑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alt+J</span><br></pre></td></tr></table></figure><h2 id="Android-Studio-插件"><a href="#Android-Studio-插件" class="headerlink" title="Android Studio 插件"></a>Android Studio 插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Settings → Plugin → Browse repositories</span><br></pre></td></tr></table></figure><h3 id="Ailbaba-Java-Coding-Guidelines"><a href="#Ailbaba-Java-Coding-Guidelines" class="headerlink" title="Ailbaba Java Coding Guidelines"></a>Ailbaba Java Coding Guidelines</h3><ul><li>阿里巴巴自动化IDE检测开发规范</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Settings → Plugin → Browse repositories → Ailbaba Java Coding Guidelines</span><br></pre></td></tr></table></figure><h3 id="GsonFromat-json"><a href="#GsonFromat-json" class="headerlink" title="GsonFromat json"></a>GsonFromat json</h3><ul><li>快速生成实体类</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alt+S</span><br></pre></td></tr></table></figure><h3 id="ButterKnife-Zelezny"><a href="#ButterKnife-Zelezny" class="headerlink" title="ButterKnife Zelezny"></a>ButterKnife Zelezny</h3><ul><li>一键生成注解</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Shift+B (鼠标需放在布局文件ID上)</span><br></pre></td></tr></table></figure><h3 id="Lifecycle-Sorter"><a href="#Lifecycle-Sorter" class="headerlink" title="Lifecycle Sorter"></a>Lifecycle Sorter</h3><p> -Activiity/Fragment 生命周期排序</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + alt + K</span><br></pre></td></tr></table></figure><h3 id="Lint-Cleaner-Plugin"><a href="#Lint-Cleaner-Plugin" class="headerlink" title="Lint Cleaner Plugin"></a>Lint Cleaner Plugin</h3><p> -自动清理无用资源</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle lintClean</span><br></pre></td></tr></table></figure><h3 id="Android-Parcelable-code-generator"><a href="#Android-Parcelable-code-generator" class="headerlink" title="Android Parcelable code generator"></a>Android Parcelable code generator</h3><p> -快速实现Parcelable</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alt + insert → Parcelable</span><br></pre></td></tr></table></figure><h2 id="Android-Studio-小技巧"><a href="#Android-Studio-小技巧" class="headerlink" title="Android Studio 小技巧"></a>Android Studio 小技巧</h2><h3 id="设置-author-data……"><a href="#设置-author-data……" class="headerlink" title="设置@author,@data……"></a>设置@author,@data……</h3><p> -注释插入作者、日期等信息</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Setting → File and Code Templates</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;总所周知，Android Studio是安卓开发最好的工具，也是现在大把多数Android开发者最主要的开发工具，因此，使用好Android Studio快捷键和插件等开发小技巧还是很有必要的。&lt;/p&gt;
+&lt;h2 id=&quot;Android-Studio-快捷键&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="Android Studio" scheme="https://samsarayoung.github.io/categories/Android-Studio/"/>
+    
+    
+      <category term="Android" scheme="https://samsarayoung.github.io/tags/Android/"/>
+    
+      <category term="Android Studio" scheme="https://samsarayoung.github.io/tags/Android-Studio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://samsarayoung.github.io/2018/05/23/hello-world/"/>
+    <id>https://samsarayoung.github.io/2018/05/23/hello-world/</id>
+    <published>2018-05-22T16:52:18.108Z</published>
+    <updated>2018-05-26T13:31:15.517Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://samsarayoung.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://samsarayoung.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
