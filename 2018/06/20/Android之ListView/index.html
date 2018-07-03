@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Android之ListView | Samsara Young&#39;s Blog | 黑夜给了我黑色的眼睛, 我却用它来寻找光明，还有别人路上掉落的硬币!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android，ListView">
+    <meta name="description" content="ListView可以是Android开发过程中非常常用的控件，几乎所有的应用程序都需要用到它，因此我们需要掌握ListView。ListView主要是以列表的形式来展现具体内容的并可以根据数据的长度通过滑动来显示更多的数据，当我们需要显示大量的数据的时候，我们就可以使用ListView来实现它。 ##ListView的基本属性列表的显示需要三个元素： 1．ListVeiw 用来展示列表的View，">
+<meta name="keywords" content="Android，ListView">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android之ListView">
+<meta property="og:url" content="https://samsarayoung.github.io/2018/06/20/Android之ListView/index.html">
+<meta property="og:site_name" content="Samsara Young&#39;s Blog">
+<meta property="og:description" content="ListView可以是Android开发过程中非常常用的控件，几乎所有的应用程序都需要用到它，因此我们需要掌握ListView。ListView主要是以列表的形式来展现具体内容的并可以根据数据的长度通过滑动来显示更多的数据，当我们需要显示大量的数据的时候，我们就可以使用ListView来实现它。 ##ListView的基本属性列表的显示需要三个元素： 1．ListVeiw 用来展示列表的View，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/007c0oXwgy1fswz436vc3j309z0fyq53.jpg">
+<meta property="og:updated_time" content="2018-07-03T13:44:17.263Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android之ListView">
+<meta name="twitter:description" content="ListView可以是Android开发过程中非常常用的控件，几乎所有的应用程序都需要用到它，因此我们需要掌握ListView。ListView主要是以列表的形式来展现具体内容的并可以根据数据的长度通过滑动来显示更多的数据，当我们需要显示大量的数据的时候，我们就可以使用ListView来实现它。 ##ListView的基本属性列表的显示需要三个元素： 1．ListVeiw 用来展示列表的View，">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/007c0oXwgy1fswz436vc3j309z0fyq53.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Samsara Young&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Samsara Young</h5>
+          <a href="mailto:samsara_young@163.com" title="samsara_young@163.com" class="mail">samsara_young@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/samsarayoung/samsarayoung.github.io" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android之ListView</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android之ListView</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-20T12:36:37.000Z" itemprop="datePublished" class="page-time">
+  2018-06-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android-，ListView/">Android ，ListView</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#布局文件module-list-item-xml："><span class="post-toc-number">1.</span> <span class="post-toc-text">布局文件module_list_item .xml：</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="w-Android之ListView"
+  class="post-article article-type-w fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Android之ListView</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-20 20:36:37" datetime="2018-06-20T12:36:37.000Z"  itemprop="datePublished">2018-06-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android-，ListView/">Android ，ListView</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>ListView可以是Android开发过程中非常常用的控件，几乎所有的应用程序都需要用到它，因此我们需要掌握ListView。<br>ListView主要是以列表的形式来展现具体内容的并可以根据数据的长度通过滑动来显示更多的数据，当我们需要显示大量的数据的时候，我们就可以使用ListView来实现它。</p>
+<p>##ListView的基本属性<br>列表的显示需要三个元素：</p>
+<p>1．ListVeiw 用来展示列表的View，即item。</p>
+<p>2．适配器 用来把数据映射到ListView上的中介。</p>
+<p>3．数据    具体的将被映射的字符串，图片，或者基本组件。</p>
+<p>##ListView的常用属性</p>
+<ol>
+<li><p>android:cacheColorHint：拖动背景的缓存色，需要用图片做背景时可以将android:cacheColorHint指定为透明（#00000000）。</p>
+</li>
+<li><p>android:divider：使用一个Drawable或者color设置分割线样式，设置这个属性为”@null”时不显示分割线。                            </p>
+</li>
+<li><p>android:dividerHeight：设置分割线的间隔距离。</p>
+</li>
+<li><p>android:drawSelectorOnTop：设置这个属性为”true”时点击某一条记录，颜色会显示在最上面，记录上的文字被遮住，所以点击文字不放，文字就看不到；<br>设置这个属性为”false”时点击某条记录不放，颜色会在记录的后面，成为背景色，但是记录内容的文字是可见的。</p>
+</li>
+<li><p>android:entries：设置一个资源Id，用于填充ListView的数据项。</p>
+</li>
+<li><p>android:fadingEdge： 设置这个属性为”none” 设置后去掉上边和下边的阴影。</p>
+</li>
+<li><p>android:fadeScrollbars： 设置这个属性为”true”时就可以实现滚动条的自动隐藏和显示。</p>
+</li>
+<li><p>android:android:fastScrollEnabled：设置这个属性为”true”时快速滚动滑块。</p>
+</li>
+<li><p>android:transcriptMode：设置这个属性为”alwaysScroll” 时自动滑动到最底部。</p>
+</li>
+</ol>
+<p>##ListView的用法</p>
+<p>###主要参考步骤及代码<br>1) 定义一个实体类 ListViews，作为 ListView 适配器的适配类型。</p>
+<p>2) 为 ListView 的子项指定一个我们自定义的布局 module_list_item.xml。</p>
+<p>3) 创建一个自定义的适配器 MyListViewAdapter，这个适配器继承自 BaesAdapter。重写构造方法和 getView 方法。</p>
+<p>4)在MainActivity中编写，初始化数据源，给ListView设置adapter。</p>
+<p>####实体类ListViews代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class ListViews &#123;</span><br><span class="line"></span><br><span class="line">    private String mName;</span><br><span class="line">    private int mId;</span><br><span class="line"></span><br><span class="line">    public <span class="function"><span class="title">ListViews</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public ListViews(String mName, int mId) &#123;</span><br><span class="line">        this.mName = mName;</span><br><span class="line">        this.mId = mId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String <span class="function"><span class="title">getName</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> mName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="function"><span class="title">setName</span></span>() &#123;</span><br><span class="line">        this.mName = mName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int <span class="function"><span class="title">getId</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> mId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="function"><span class="title">setId</span></span>() &#123;</span><br><span class="line">        this.mId = mId;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>####布局文件module_activity_mylistview.xml：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">    android:layout_height=<span class="string">"match_parent"</span></span><br><span class="line">    android:orientation=<span class="string">"vertical"</span></span><br><span class="line">    &gt;</span><br><span class="line"></span><br><span class="line">    &lt;ListView</span><br><span class="line">        android:id=<span class="string">"@+id/lv"</span></span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"match_parent"</span></span><br><span class="line">        android:divider=<span class="string">"#f4f4f4"</span></span><br><span class="line">        android:dividerHeight=<span class="string">"1dp"</span></span><br><span class="line">        &gt;</span><br><span class="line">    &lt;/ListView&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="布局文件module-list-item-xml："><a href="#布局文件module-list-item-xml：" class="headerlink" title="布局文件module_list_item .xml："></a>布局文件module_list_item .xml：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">              android:orientation=<span class="string">"horizontal"</span></span><br><span class="line">              android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">              android:layout_height=<span class="string">"match_parent"</span>&gt;</span><br><span class="line">   &lt;ImageView</span><br><span class="line">    android:id=<span class="string">"@+id/iv"</span></span><br><span class="line">    android:layout_width=<span class="string">"wrap_content"</span></span><br><span class="line">    android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">    android:layout_weight=<span class="string">"1"</span></span><br><span class="line">       /&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=<span class="string">"@+id/tv"</span></span><br><span class="line">        android:layout_width=<span class="string">"0dp"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">        android:layout_weight=<span class="string">"1"</span>/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>####相应的Activity代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">public class MyListView extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @BindView(R.id.lv)</span><br><span class="line">    ListView mLv;</span><br><span class="line">    private List&lt;ListViews&gt; mArrayList = null;</span><br><span class="line">    private Context mContext;</span><br><span class="line">    private MyListViewAdapter mMyListViewAdapter = null;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.module_activity_mylistview);</span><br><span class="line"></span><br><span class="line">        ButterKnife.bind(this);</span><br><span class="line">        //初始化数据</span><br><span class="line">        init();</span><br><span class="line"></span><br><span class="line">        mContext = MyListView.this;</span><br><span class="line"></span><br><span class="line">        // 创建并设置Adapter</span><br><span class="line">        mMyListViewAdapter = new MyListViewAdapter(mContext, (LinkedList&lt;ListViews&gt;) mArrayList);</span><br><span class="line">        mLv.setAdapter(mMyListViewAdapter);</span><br><span class="line"></span><br><span class="line">        //设置item点击监听事件</span><br><span class="line">        mLv.setOnItemClickListener(new AdapterView.<span class="function"><span class="title">OnItemClickListener</span></span>() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) &#123;</span><br><span class="line">                Toast.makeText(MyListView.this, (mArrayList.get(position).getName()), Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void <span class="function"><span class="title">init</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">        mArrayList = new LinkedList&lt;ListViews&gt;();</span><br><span class="line">        ListViews a = new ListViews(<span class="string">"周杰伦"</span>, R.drawable.module_singer_a_normal);</span><br><span class="line">        mArrayList.add(a);</span><br><span class="line">        ListViews b = new ListViews(<span class="string">"薛之谦"</span>, R.drawable.module_singer_b_normal);</span><br><span class="line">        mArrayList.add(b);</span><br><span class="line">        ListViews c = new ListViews(<span class="string">"林俊杰"</span>, R.drawable.module_singer_c_normal);</span><br><span class="line">        mArrayList.add(c);</span><br><span class="line">        ListViews d = new ListViews(<span class="string">"光良"</span>, R.drawable.module_singer_d_normal);</span><br><span class="line">        mArrayList.add(d);</span><br><span class="line">        ListViews e = new ListViews(<span class="string">"李荣浩"</span>, R.drawable.module_singer_e_normal);</span><br><span class="line">        mArrayList.add(e);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>####相应适配器MyListViewAdapter代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">public class MyListViewAdapter extends BaseAdapter &#123;</span><br><span class="line">    private LinkedList&lt;ListViews&gt; mList;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    private LayoutInflater inflater;</span><br><span class="line">    private ViewHolder mViewHolder;</span><br><span class="line"></span><br><span class="line">    public MyListViewAdapter(Context mContext, LinkedList&lt;ListViews&gt; mList) &#123;</span><br><span class="line">        this.mList = mList;</span><br><span class="line">        this.inflater = LayoutInflater.from(mContext);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int <span class="function"><span class="title">getCount</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> mList == null ? 0 : mList.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Object getItem(int position) &#123;</span><br><span class="line">        <span class="built_in">return</span> mList == null ? null : mList.get(position);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public long getItemId(int position) &#123;</span><br><span class="line">        <span class="built_in">return</span> position;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public View getView(int position, View convertView, ViewGroup parent) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (convertView == null) &#123;</span><br><span class="line">            mViewHolder = new ViewHolder();</span><br><span class="line">            convertView = inflater.inflate(R.layout.module_list_item, parent, <span class="literal">false</span>);</span><br><span class="line">            mViewHolder.mTv = (TextView) convertView.findViewById(R.id.tv);</span><br><span class="line">            mViewHolder.mIv = (ImageView) convertView.findViewById(R.id.iv);</span><br><span class="line"></span><br><span class="line">            //储存ViewHolder</span><br><span class="line">            convertView.setTag(mViewHolder);</span><br><span class="line"></span><br><span class="line">            ;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            //重新获取ViewHolder对象</span><br><span class="line">            mViewHolder = (ViewHolder) convertView.getTag();</span><br><span class="line">        &#125;</span><br><span class="line">        mViewHolder.mIv.setImageResource(mList.get(position).getId());</span><br><span class="line">        mViewHolder.mTv.setText(mList.get(position).getName());</span><br><span class="line">        <span class="built_in">return</span> convertView;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static class ViewHolder &#123;</span><br><span class="line">        TextView mTv;</span><br><span class="line">        ImageView mIv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>####效果如下：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/007c0oXwgy1fswz436vc3j309z0fyq53.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-03T13:44:17.263Z" itemprop="dateUpdated">2018-07-03 21:44:17</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/06/20/Android之ListView/" target="_blank" rel="external">https://samsarayoung.github.io/2018/06/20/Android之ListView/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://samsarayoung.github.io">
+            <img src="/img/avatar.jpg" alt="Samsara Young">
+            Samsara Young
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android，ListView/">Android，ListView</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://samsarayoung.github.io/2018/06/20/Android之ListView/&title=《Android之ListView》 — Samsara Young's Blog&pic=https://samsarayoung.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://samsarayoung.github.io/2018/06/20/Android之ListView/&title=《Android之ListView》 — Samsara Young's Blog&source=Android" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://samsarayoung.github.io/2018/06/20/Android之ListView/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android之ListView》 — Samsara Young's Blog&url=https://samsarayoung.github.io/2018/06/20/Android之ListView/&via=https://samsarayoung.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://samsarayoung.github.io/2018/06/20/Android之ListView/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/25/Android-开发常用小技巧/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android 开发常用小技巧</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Samsara Young &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://samsarayoung.github.io/2018/06/20/Android之ListView/&title=《Android之ListView》 — Samsara Young's Blog&pic=https://samsarayoung.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://samsarayoung.github.io/2018/06/20/Android之ListView/&title=《Android之ListView》 — Samsara Young's Blog&source=Android" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://samsarayoung.github.io/2018/06/20/Android之ListView/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android之ListView》 — Samsara Young's Blog&url=https://samsarayoung.github.io/2018/06/20/Android之ListView/&via=https://samsarayoung.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://samsarayoung.github.io/2018/06/20/Android之ListView/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://samsarayoung.github.io/2018/06/20/Android之ListView/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
